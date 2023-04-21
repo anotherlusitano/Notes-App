@@ -4,6 +4,8 @@ import 'package:notes_app/models/note.dart';
 import 'package:notes_app/models/note_data.dart';
 import 'package:provider/provider.dart';
 
+import 'editing_note_page.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -20,8 +22,23 @@ class _HomePageState extends State<HomePage> {
     //create a blank note
     Note newNote = Note(id: id, text: '');
 
-    //TODO: go to edit the note
+    //go to edit the note
+    goToNotePage(newNote, true);
   }
+
+  //go to note editing page
+  void goToNotePage(Note note, bool isNewNote) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => EditingNotePage(
+            note: note,
+            isNewNote: false,
+          ),
+        ));
+  }
+
+  //TODO: delete note
 
   @override
   Widget build(BuildContext context) {
