@@ -11,12 +11,25 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  //create new note
+  void createNewNote() {}
+
   @override
   Widget build(BuildContext context) {
     return Consumer<NoteData>(
       builder: (context, value, child) => Scaffold(
         backgroundColor: CupertinoColors.systemGroupedBackground,
+        floatingActionButton: FloatingActionButton(
+          onPressed: createNewNote,
+          elevation: 0,
+          backgroundColor: Colors.grey[300],
+          child: Icon(
+            Icons.add,
+            color: Colors.white,
+          ),
+        ),
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //heading
             const Padding(
