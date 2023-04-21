@@ -14,12 +14,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Consumer(
       builder: (context, value, child) => Scaffold(
-        appBar: AppBar(),
         body: Column(
           children: [
             //heading
             const Padding(
-              padding: EdgeInsets.all(25.0),
+              padding: EdgeInsets.only(left: 25.0, top: 75),
               child: Text(
                 'Notes',
                 style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
