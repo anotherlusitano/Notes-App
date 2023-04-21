@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:notes_app/models/note.dart';
 import 'package:notes_app/models/note_data.dart';
 import 'package:provider/provider.dart';
 
@@ -12,7 +13,15 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   //create new note
-  void createNewNote() {}
+  void createNewNote() {
+    //create a new id
+    int id = Provider.of<NoteData>(context, listen: false).getAllNotes().length;
+
+    //create a blank note
+    Note newNote = Note(id: id, text: '');
+
+    //TODO: go to edit the note
+  }
 
   @override
   Widget build(BuildContext context) {
