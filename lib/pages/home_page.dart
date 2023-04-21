@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -25,7 +26,15 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
-            //TODO: list of notes
+            //list of notes
+            CupertinoListSection.insetGrouped(
+              children: [
+                CupertinoListTile(title: Text("bananas")),
+                CupertinoListTile(title: Text("bananas")),
+                CupertinoListTile(title: Text("bananas")),
+                CupertinoListTile(title: Text("bananas")),
+              ],
+            ),
           ],
         ),
       ),

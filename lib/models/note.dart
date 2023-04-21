@@ -1,5 +1,3 @@
-import 'dart:html';
-
 class Note {
   int id;
   String text;
