@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:notes_app/models/note_data.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,7 +13,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Consumer(
+    return Consumer<NoteData>(
       builder: (context, value, child) => Scaffold(
         backgroundColor: CupertinoColors.systemGroupedBackground,
         body: Column(
@@ -28,12 +29,12 @@ class _HomePageState extends State<HomePage> {
 
             //list of notes
             CupertinoListSection.insetGrouped(
-              children: [
-                CupertinoListTile(title: Text("bananas")),
-                CupertinoListTile(title: Text("bananas")),
-                CupertinoListTile(title: Text("bananas")),
-                CupertinoListTile(title: Text("bananas")),
-              ],
+              children: List.generate(
+                value.getAllNotes().length,
+                (index) => CupertinoListTile(
+                  title: Text(value.getAllNotes()[index].text),
+                ),
+              ),
             ),
           ],
         ),
