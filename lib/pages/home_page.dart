@@ -14,6 +14,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Consumer(
       builder: (context, value, child) => Scaffold(
+        backgroundColor: CupertinoColors.systemGroupedBackground,
         body: Column(
           children: [
             //heading
