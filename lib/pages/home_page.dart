@@ -38,7 +38,10 @@ class _HomePageState extends State<HomePage> {
         ));
   }
 
-  //TODO: delete note
+  //delete note
+  void deleteNote(Note note) {
+    Provider.of<NoteData>(context, listen: false).deleteNode(note);
+  }
 
   @override
   Widget build(BuildContext context) {
