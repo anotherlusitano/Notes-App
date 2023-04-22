@@ -1,6 +1,5 @@
 import 'package:flutter/widgets.dart';
 import 'package:notes_app/models/note.dart';
-import 'note.dart';
 
 class NoteData extends ChangeNotifier {
   //overall list of notes
