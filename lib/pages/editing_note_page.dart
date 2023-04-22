@@ -32,7 +32,7 @@ class _EditingNotePageState extends State<EditingNotePage> {
     });
   }
 
-  //TODO: add new note
+  //add new note
   void addNewNote(int id) {
     //get text from editor
     String text = _controller.document.toPlainText();
@@ -43,7 +43,14 @@ class _EditingNotePageState extends State<EditingNotePage> {
     );
   }
 
-  //TODO: update existing note
+  //update existing note
+  void updateNote() {
+    //get text from editor
+    String text = _controller.document.toPlainText();
+
+    //update note
+    Provider.of<NoteData>(context, listen: false).updateNote(widget.note, text);
+  }
 
   @override
   Widget build(BuildContext context) {
