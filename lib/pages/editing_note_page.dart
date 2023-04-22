@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 import 'package:notes_app/models/note.dart';
+import 'package:notes_app/models/note_data.dart';
+import 'package:provider/provider.dart';
 
 class EditingNotePage extends StatefulWidget {
   Note note;
@@ -31,6 +33,15 @@ class _EditingNotePageState extends State<EditingNotePage> {
   }
 
   //TODO: add new note
+  void addNewNote(int id) {
+    //get text from editor
+    String text = _controller.document.toPlainText();
+
+    //add the new note
+    Provider.of<NoteData>(context, listen: false).addNewNote(
+      Note(id: id, text: text),
+    );
+  }
 
   //TODO: update existing note
 
